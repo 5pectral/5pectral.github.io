@@ -22,7 +22,12 @@ var meetIcon = L.icon({
     popupAnchor: [0, -20],
 });
 
-
+var raceIcon = L.icon({
+    iconUrl: 'racepin.png',
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    popupAnchor: [0, -20],
+});
 
     // Markers
     var doublegarage = L.marker([-58, -71], {
@@ -452,6 +457,32 @@ var meetIcon = L.icon({
         title: "Covered Parking", icon: meetIcon
     }).bindPopup('<hl><b> Covered Parking </b></hl><img src="./img/coveredparking.png" width="300" height: auto/></hl> <p> Simple parking lot. Suitible for voting. Max Capacity: 30 players.</p>').addTo(map);
     
+// Races
+
+var docksdrift = L.marker([-79, -16.1], {
+    title: "Docks Drift Track", icon: raceIcon
+}).bindPopup('<hl><b> Docks Drift </b></hl><img src="./img/tracks/docksdrift.png" width="300" height: auto/></hl> <p>Short drift track. 8 turns. Made by: <i><b>CopperAngel</b></i></p>');
+
+var vinewoodsprint = L.marker([-34.7, 14], {
+    title: "Vinewood Hills Stage Sprint", icon: raceIcon
+}).bindPopup('<hl><b> Vinewood Hills Stage Sprint</b></hl><img src="./img/tracks/vinewoodsprint.png" width="300" height: auto/></hl> <p> Rally stage. 30% dirt, 70% tarmac. Right to left. Made by: <i><b>Batata-Cozida</b></i></p>');
+
+var alamoclassic = L.marker([37, -12], {
+    title: "Alamo Sea Circuit - Classic", icon: raceIcon
+}).bindPopup('<hl><b>Alamo Sea Circuit - Classic</b></hl><img src="./img/tracks/alamoclassic.png" width="300" height: auto/></hl> <p> Either clockwise or anti-clockwise. 50% dirt, 50% tarmac. Made by: <i><b>Batata-Cozida</b></i></p>');
+
+var sandyhills = L.marker([16.6, -28], {
+    title: "Sandy Hills", icon: raceIcon
+}).bindPopup('<hl><b> Sandy Hills</b></hl><img src="./img/tracks/sandyhills.png" width="300" height: auto/></hl> <p> Either clockwise or anti-clockwise. 90% dirt 10% tarmac. Made by: <i><b>Batata-Cozida</b></i></p>');
+
+var tongvaclassic = L.marker([-27.4, -105], {
+    title: "Tongva Hills - Classic", icon: raceIcon
+}).bindPopup('<hl><b> Tongva Hills - Classic </b></hl><img src="./img/tracks/tongvaclassic.png" width="300" height: auto/></hl> <p> Full tarmac track. Clockwise. Made by: <i><b>Batata-Cozida</b></i></p>');
+
+var tongvaeasy = L.marker([-25.5, -105], {
+    title: "Tongva Hills - Easy", icon: raceIcon
+}).bindPopup('<hl><b> Tongva Hills - Easy </b></hl><img src="./img/tracks/tongvaeasy.png" width="300" height: auto/></hl> <p> Full tarmac track. Clockwise. Made by: <i><b>Batata-Cozida</b></i></p>');
+
 // Tile layer
 
    var streets = L.tileLayer('maps/streets/{z}/{x}/{y}.png',{minZoom: 2, maxZoom: 5, continuousWorld: false,noWrap: true}).addTo(map);
@@ -464,6 +495,7 @@ var meetIcon = L.icon({
 
     var voting = L.layerGroup([seoulmall, drivethrough, ltdmirror, mirrormarket, church, scrapyard, docksstorage, docksworkshop, elsgarages]).addTo(map);
     
+    var race = L.layerGroup([docksdrift, vinewoodsprint, alamoclassic, sandyhills, tongvaclassic, tongvaeasy]).addTo(map);
 
     var baseMaps = {
         "Streets": streets,
@@ -471,7 +503,8 @@ var meetIcon = L.icon({
     };
     
     var overlays = {
-       "Not suitable for voting": voting
+       "Not suitable for voting": voting,
+       "Race tracks": race
     };
     
     L.control.layers(baseMaps, overlays).addTo(map);
