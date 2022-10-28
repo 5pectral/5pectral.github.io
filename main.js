@@ -451,7 +451,7 @@ L.tileLayer('maps/streets/{z}/{x}/{y}.png',{minZoom: 2, maxZoom: 5, continuousWo
    
 // Grouping Markers
 
-    var voting = L.layerGroup([seoulmall, drivethrough, ltdmirror, mirrormarket, church, scrapyard, docksstorage, docksworkshop, elsgarages]);
+    var voting = L.layerGroup([seoulmall, drivethrough, ltdmirror, mirrormarket, church, scrapyard, docksstorage, docksworkshop, elsgarages]).addTo(map);
     
 
     var baseMaps = {
