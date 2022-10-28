@@ -16,7 +16,7 @@ L.tileLayer('maps/streets/{z}/{x}/{y}.png',{minZoom: 2, maxZoom: 5, continuousWo
 // Icons
 
 var meetIcon = L.icon({
-    iconUrl: 'meetpin.png',
+    iconUrl: 'pintest.png',
     iconSize: [40, 40],
     iconAnchor: [20, 40],
     popupAnchor: [0, -20],
