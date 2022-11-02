@@ -457,6 +457,12 @@ var raceIcon = L.icon({
         title: "Covered Parking", icon: meetIcon
     }).bindPopup('<hl><b> Covered Parking </b></hl><img src="./img/coveredparking.png" width="300" height: auto/></hl> <p> Simple parking lot. Suitible for voting. Max Capacity: 30 players.</p>').addTo(map);
     
+    var backlotparking = L.marker([-47.6, -27.4], {
+        title: "Backlot Parking", icon: meetIcon
+    }).bindPopup('<hl><b> Backlot Parking </b></hl><img src="./img/backlotparking.png" width="300" height: auto/></hl> <p> Simple parking lot. Suitible for voting. Max Capacity: 20 players.<i> By: Seraphim</i></p>').addTo(map);
+    
+
+
 // Races
 
 var docksdrift = L.marker([-79, -16.1], {
