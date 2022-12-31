@@ -41,8 +41,15 @@ body {
 .about{
     width: 100%;
     padding: 100px 0px;
-    
-
+    background-color: #192428;
+}
+.main{
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 h1{
     color: white;
@@ -58,4 +65,13 @@ h4{
     color: white;
     letter-spacing: 2px;
     font-size: 20px;
+}
+h2{
+    color: white;
+    font-size: 75px;
+    margin-bottom: 20px;
+}
+p{
+    color: white;
+    font-size: 30px;
 }
